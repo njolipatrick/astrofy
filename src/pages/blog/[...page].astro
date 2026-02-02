@@ -13,20 +13,157 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page } = Astro.props;
+const featuredPost = page.data[0];
+const regularPosts = page.data.slice(1);
 ---
 
-<BaseLayout title="Blog" sideBarActiveItemID="blog">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Blog</div>
+<BaseLayout
+  title="Blog - Patrick Timothy Njoli | Backend Development & NestJS"
+  description="Technical articles about Node.js, NestJS, backend architecture, and building scalable systems. Real-world insights from building fintech infrastructure."
+  sideBarActiveItemID="blog"
+>
+  <!-- Blog Header -->
+  <div class="mb-12">
+    <h1 class="text-5xl font-bold mb-4">Blog</h1>
+    <p class="text-xl text-base-content/80 max-w-3xl leading-relaxed">
+      Deep dives into <strong>Node.js, NestJS, backend architecture</strong>, and
+      <strong>building scalable systems</strong>. Sharing lessons learned from
+      building fintech infrastructure at Duplo and real-world engineering challenges.
+    </p>
   </div>
 
-  {
-    page.data.length === 0 ? (
-      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
+  <!-- Quick Stats/Topics -->
+  <div class="grid md:grid-cols-4 gap-4 mb-12">
+    <div class="card bg-base-200 p-4 text-center">
+      <div class="text-3xl font-bold">{page.data.length}</div>
+      <div class="text-sm">Articles Published</div>
+    </div>
+    <div class="card bg-base-200 p-4 text-center">
+      <div class="text-2xl mb-1">🎯</div>
+      <div class="text-sm font-semibold">Node.js & NestJS</div>
+    </div>
+    <div class="card bg-base-200 p-4 text-center">
+      <div class="text-2xl mb-1">🏗️</div>
+      <div class="text-sm font-semibold">System Architecture</div>
+    </div>
+    <div class="card bg-base-200 p-4 text-center">
+      <div class="text-2xl mb-1">💼</div>
+      <div class="text-sm font-semibold">Fintech Insights</div>
+    </div>
+  </div>
+
+  <!-- Newsletter/Follow CTA -->
+  <div class="card bg-base-200 p-8 mb-12">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+      <p class="text-lg mb-6">
+        Get notified when I publish new articles about Node.js, NestJS,
+        and building scalable backend systems.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="https://hashnode.com/@njolipatrick" target="_blank" class="btn btn-neutral">
+          📝 Follow on Hashnode
+        </a>
+        <a href="https://x.com/njolipatrick" target="_blank" class="btn btn-neutral">
+          🐦 Follow on Twitter
+        </a>
+        <a href="/rss.xml" class="btn btn-neutral">
+          📡 RSS Feed
+        </a>
       </div>
-    ) : (
+    </div>
+  </div>
+
+  <!-- Topics I Write About -->
+  <div class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Topics I Write About</h2>
+
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Backend Development</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-neutral badge-lg">Node.js</span>
+          <span class="badge badge-neutral badge-lg">NestJS</span>
+          <span class="badge badge-neutral badge-lg">TypeScript</span>
+          <span class="badge badge-neutral badge-lg">API Design</span>
+          <span class="badge badge-neutral badge-lg">REST & GraphQL</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Architecture & Systems</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-neutral badge-lg">Microservices</span>
+          <span class="badge badge-neutral badge-lg">Event-Driven</span>
+          <span class="badge badge-neutral badge-lg">Scalability</span>
+          <span class="badge badge-neutral badge-lg">Performance</span>
+          <span class="badge badge-neutral badge-lg">Database Design</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-3">DevOps & Infrastructure</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-neutral badge-lg">Docker</span>
+          <span class="badge badge-neutral badge-lg">AWS</span>
+          <span class="badge badge-neutral badge-lg">CI/CD</span>
+          <span class="badge badge-neutral badge-lg">Monitoring</span>
+          <span class="badge badge-neutral badge-lg">Testing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {page.data.length > 0 ? (
+    <>
+      <!-- Featured Post (if exists) -->
+      {featuredPost && (
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold mb-6">Featured Article</h2>
+          <div class="card lg:card-side bg-base-200 shadow-xl hover:shadow-2xl transition-shadow">
+            <figure class="lg:w-1/2">
+              <img
+                src={featuredPost.coverImage.url}
+                alt={featuredPost.title}
+                class="w-full h-full object-cover"
+              />
+            </figure>
+            <div class="card-body lg:w-1/2">
+              <div class="badge badge-neutral mb-2">Featured</div>
+              <h3 class="card-title text-3xl hover:text-base-content/80 transition-colors">
+                {featuredPost.title}
+              </h3>
+              <p class="text-lg text-base-content/80">
+                {featuredPost.subtitle}
+              </p>
+              <div class="flex gap-3 text-sm text-base-content/60 mt-2">
+                <span>📅 {new Date(featuredPost.publishedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })}</span>
+              </div>
+              <div class="card-actions justify-end mt-6">
+                <a
+                  href={"/blog/" + createSlug(featuredPost.title)}
+                  class="btn btn-neutral"
+                >
+                  Read Article →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- All Posts Section -->
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">
+          {page.data.length > 1 ? 'All Articles' : 'Latest Article'}
+        </h2>
+      </div>
+
+      <!-- Posts List -->
       <ul>
         {page.data.map((post) => (
           <>
@@ -35,7 +172,7 @@ const { page } = Astro.props;
               img={post.coverImage.url}
               desc={post.subtitle}
               url={"/blog/" + createSlug(post.title)}
-              target="_self" 
+              target="_self"
               tags={post.tags}
               publishedAt={post.publishedAt}
             />
@@ -43,47 +180,80 @@ const { page } = Astro.props;
           </>
         ))}
       </ul>
-    )
-  }
 
-  <div class="flex justify-between">
-    {
-      page.data.prev ? (
-        <a href={page.data.prev} class="btn btn-ghost my-10 mx-5">
-          {" "}
-          <svg
-            class="h-6 w-6 fill-current md:h-8 md:w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-          </svg>{" "}
-          Recent posts
+      <!-- Pagination -->
+      <div class="flex justify-between mt-12">
+        {page.url.prev ? (
+          <a href={page.url.prev} class="btn btn-neutral">
+            <svg
+              class="h-6 w-6 fill-current md:h-8 md:w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+            </svg>
+            Recent posts
+          </a>
+        ) : (
+          <div />
+        )}
+        {page.url.next ? (
+          <a href={page.url.next} class="btn btn-neutral">
+            Older Posts
+            <svg
+              class="h-6 w-6 fill-current md:h-8 md:w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+            </svg>
+          </a>
+        ) : (
+          <div />
+        )}
+      </div>
+    </>
+  ) : (
+    <!-- Empty State -->
+    <div class="card bg-base-200 p-12 text-center mb-12">
+      <div class="text-6xl mb-4">📝</div>
+      <h2 class="text-2xl font-bold mb-4">More Articles Coming Soon!</h2>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">
+        I'm currently working on in-depth articles about Node.js, NestJS,
+        and backend architecture. Follow me to get notified when they're published.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="https://x.com/njolipatrick" target="_blank" class="btn btn-neutral">
+          🐦 Follow on Twitter
         </a>
-      ) : (
-        <div />
-      )
-    }
-    {
-      page.data.next ? (
-        <a href={page.data.next} class="btn btn-ghost my-10 mx-5">
-          Older Posts{" "}
-          <svg
-            class="h-6 w-6 fill-current md:h-8 md:w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            {" "}
-            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-          </svg>
+        <a href="https://hashnode.com/@njolipatrick" target="_blank" class="btn btn-neutral">
+          📝 Follow on Hashnode
         </a>
-      ) : (
-        <div />
-      )
-    }
+      </div>
+    </div>
+  )}
+
+  <!-- Bottom CTA -->
+  <div class="card bg-base-200 p-8 text-center mt-12">
+    <h2 class="text-2xl font-bold mb-4">Want to Learn More?</h2>
+    <p class="text-lg mb-6 max-w-2xl mx-auto">
+      Check out my work experience and technical expertise on my CV,
+      or connect with me on social media.
+    </p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="/cv" class="btn btn-neutral">
+        View My CV
+      </a>
+      <a href="https://github.com/njolipatrick" target="_blank" class="btn btn-neutral">
+        GitHub Profile
+      </a>
+      <a href="mailto:ogmaro@gmail.com" class="btn btn-neutral">
+        Email Me
+      </a>
+    </div>
   </div>
-</BaseLayout> 
+</BaseLayout>
