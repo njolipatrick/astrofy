@@ -3,166 +3,472 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+<BaseLayout
+  title="Resume - Patrick Timothy Njoli | Senior Software Engineer"
+  description="Resume of Patrick Timothy Njoli, Senior Software Engineer at Duplo specializing in Node.js, NestJS, backend architecture, and scalable systems for fintech applications."
+  sideBarActiveItemID="cv"
+>
+  <!-- Header Section -->
+  <div class="mb-8">
+    <div class="flex justify-between items-center mb-4 flex-wrap gap-4">
+      <h1 class="text-4xl font-bold">Resume</h1>
+      <a
+        href="/cv.pdf"
+        download
+        class="btn btn-primary"
+        aria-label="Download Resume as PDF"
+      >
+        📥 Download PDF
+      </a>
+    </div>
+    <div class="text-sm text-base-content/70">
+      Last updated: February 2026
+    </div>
   </div>
 
-  <div class="mb-10 text-justify">
-    Throughout my journey as a backend  engineer, I have had the privilege of
-    contributing significantly to various projects, and I am excited to present
-    my experience as a timeline of impactful events. This timeline showcases my
-    roles and the substantial impact I've made as an individual within both
-    small and large teams.
+  <!-- Profile Section -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Profile</h2>
+    <div class="text-lg text-justify leading-relaxed">
+      Senior Software Engineer specializing in <strong>backend development with Node.js and the NestJS framework</strong>.
+      Currently at <strong>Duplo</strong>, building scalable fintech infrastructure for Africa's business banking platform.
+      Proven expertise in <strong>microservices architecture, event-driven systems, API development, and cross-functional
+      team leadership</strong>. Track record of delivering mission-critical features from database design to deployment,
+      with strong focus on <strong>compliance automation, notification systems, and A/B testing frameworks</strong>.
+      Passionate about writing clean, maintainable code and building systems that drive business growth.
+    </div>
   </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+  <!-- Key Highlights -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Key Highlights</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="card bg-base-200 p-4">
+        <h3 class="font-bold text-lg mb-2">🎯 Core Expertise</h3>
+        <p>Node.js, NestJS, TypeScript, Microservices, Event-Driven Architecture</p>
+      </div>
+      <div class="card bg-base-200 p-4">
+        <h3 class="font-bold text-lg mb-2">💼 Industry Focus</h3>
+        <p>Fintech, Healthcare Tech, SaaS Platforms, Payment Systems</p>
+      </div>
+      <div class="card bg-base-200 p-4">
+        <h3 class="font-bold text-lg mb-2">📈 Current Role</h3>
+        <p>Senior Software Engineer at Duplo (Contract)</p>
+      </div>
+      <div class="card bg-base-200 p-4">
+        <h3 class="font-bold text-lg mb-2">🌍 Location</h3>
+        <p>Lagos, Nigeria (Remote)</p>
+      </div>
+    </div>
   </div>
 
-  <ul class="list-disc mx-6 flex space-x-20">
-    <li>Git</li>
-    <li>Javascript</li>
-    <li>PHP</li>
-    <li>NodeJs</li>
-    <li>AWS</li>
-    <li>Docker</li> 
-  </ul>
+  <!-- Technical Skills Section -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Technical Skills</h2>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="space-y-6">
+      <!-- Backend Development -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Backend Development</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-primary badge-lg">Node.js</span>
+          <span class="badge badge-primary badge-lg">NestJS</span>
+          <span class="badge badge-primary badge-lg">TypeScript</span>
+          <span class="badge badge-primary badge-lg">JavaScript</span>
+          <span class="badge badge-primary badge-lg">Express.js</span>
+          <span class="badge badge-outline badge-lg">PHP</span>
+          <span class="badge badge-outline badge-lg">Laravel</span>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Databases & Data Management</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-primary badge-lg">PostgreSQL</span>
+          <span class="badge badge-primary badge-lg">MongoDB</span>
+          <span class="badge badge-primary badge-lg">MySQL</span>
+          <span class="badge badge-primary badge-lg">Redis</span>
+          <span class="badge badge-primary badge-lg">TypeORM</span>
+          <span class="badge badge-outline badge-lg">Prisma</span>
+        </div>
+      </div>
+
+      <!-- API & Architecture -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">API & System Architecture</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-primary badge-lg">RESTful APIs</span>
+          <span class="badge badge-primary badge-lg">Microservices</span>
+          <span class="badge badge-primary badge-lg">Event-Driven Architecture</span>
+          <span class="badge badge-primary badge-lg">Message Queues</span>
+          <span class="badge badge-outline badge-lg">GraphQL</span>
+          <span class="badge badge-outline badge-lg">WebSockets</span>
+          <span class="badge badge-outline badge-lg">gRPC</span>
+        </div>
+      </div>
+
+      <!-- Cloud & DevOps -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Cloud & DevOps</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-primary badge-lg">AWS</span>
+          <span class="badge badge-primary badge-lg">EC2</span>
+          <span class="badge badge-primary badge-lg">Docker</span>
+          <span class="badge badge-primary badge-lg">CI/CD</span>
+          <span class="badge badge-primary badge-lg">GitHub Actions</span>
+          <span class="badge badge-primary badge-lg">Nginx</span>
+          <span class="badge badge-outline badge-lg">Kubernetes</span>
+        </div>
+      </div>
+
+      <!-- Tools & Testing -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Tools, Testing & Collaboration</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-primary badge-lg">Git</span>
+          <span class="badge badge-primary badge-lg">Jest</span>
+          <span class="badge badge-primary badge-lg">Postman</span>
+          <span class="badge badge-primary badge-lg">Linux</span>
+          <span class="badge badge-primary badge-lg">Slack Integration</span>
+          <span class="badge badge-outline badge-lg">React</span>
+        </div>
+      </div>
+
+      <!-- Specialized Skills -->
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Specialized Expertise</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-accent badge-lg">Compliance Systems</span>
+          <span class="badge badge-accent badge-lg">Notification Architecture</span>
+          <span class="badge badge-accent badge-lg">A/B Testing Frameworks</span>
+          <span class="badge badge-accent badge-lg">Document Validation</span>
+          <span class="badge badge-accent badge-lg">Role-Based Access Control</span>
+          <span class="badge badge-accent badge-lg">Audit Trails</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Experience -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Professional Experience</h2>
   </div>
 
   <div class="time-line-container mb-10">
+    <!-- DUPLO - Current Position -->
+    <TimeLineElement
+      title="Senior Software Engineer (Contract)"
+      subtitle="December 2024 - Present (1 year 3 months) at Duplo, Nigeria (Remote)"
+    >
+      <div class="space-y-3">
+        <p class="font-semibold text-primary">
+          Building and scaling fintech infrastructure for Africa's leading business banking platform
+        </p>
+        <ul class="list-disc ml-6 space-y-2">
+          <li>
+            <strong>Led the engineering</strong> of a multi-step <strong>compliance onboarding system</strong>
+            with role-based access controls, automated document validation, and audit trails, resulting in
+            <strong>faster onboarding and fewer manual interventions</strong>
+          </li>
+          <li>
+            <strong>Designed and implemented</strong> a scalable <strong>notification and event-driven architecture</strong>
+            across email, Slack, and in-app channels, <strong>improving communication accuracy and reducing
+            notification failures</strong>
+          </li>
+          <li>
+            Built an <strong>A/B experiment tracking framework</strong> into the user onboarding flow, enabling
+            <strong>data-driven decisions and improving signup-to-activation conversion visibility</strong>
+            for product and growth teams
+          </li>
+          <li>
+            <strong>Collaborated with cross-functional teams</strong> to ship new <strong>Spend product features
+            end-to-end</strong>, from database schema design and API development to deployment and monitoring,
+            ensuring <strong>smooth rollout and minimal downtime</strong>
+          </li>
+          <li>
+            Implemented <strong>robust error handling and monitoring systems</strong> for critical financial
+            operations, ensuring system reliability and compliance with fintech regulations
+          </li>
+          <li>
+            Established <strong>software infrastructure best practices</strong> including code reviews,
+            documentation standards, and deployment procedures
+          </li>
+        </ul>
+
+        <div class="mt-4">
+          <p class="font-semibold mb-2">Key Skills:</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-sm">Software Infrastructure</span>
+            <span class="badge badge-sm">Cross-functional Team Leadership</span>
+            <span class="badge badge-sm">Node.js</span>
+            <span class="badge badge-sm">NestJS</span>
+            <span class="badge badge-sm">TypeScript</span>
+            <span class="badge badge-sm">Event-Driven Architecture</span>
+            <span class="badge badge-sm">Compliance Systems</span>
+            <span class="badge badge-sm">A/B Testing</span>
+            <span class="badge badge-sm">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+    </TimeLineElement>
+
+    <!-- MY MEDICAL BANK -->
     <TimeLineElement
       title="Backend Engineer"
-      subtitle="From June, 2023 to November, 2023 at My Medical Bank, Lagos, Nigeria"
+      subtitle="June 2023 - November 2023 (6 months) at My Medical Bank, Lagos, Nigeria"
     >
-      <dl>
-        <dd>
-          Worked across a cross functional team of both mobile and frontend
-          engineers to deliver on the company's product vision.
-        </dd>
-        <dd>
-          Deployed and manages an EC2 production and staging instance to ensure
-          99.99% availability of the web server on production.
-        </dd>
-        <dd>
-          Design a database migration strategy that moved 100% of existing users
-          onboard the newly built Public Health Record (PHR) system.
-        </dd>
-      </dl>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>
+          Worked across a <strong>cross-functional team</strong> of mobile and frontend engineers to
+          deliver on the company's product vision for healthcare technology
+        </li>
+        <li>
+          Deployed and managed <strong>EC2 production and staging instances</strong> to ensure
+          <strong>99.99% availability</strong> of the web server on production
+        </li>
+        <li>
+          Designed a <strong>database migration strategy</strong> that moved <strong>100% of existing users</strong>
+          onboard the newly built Public Health Record (PHR) system without data loss
+        </li>
+        <li>
+          Implemented <strong>API endpoints</strong> for healthcare data management with strong
+          focus on security and HIPAA-like compliance requirements
+        </li>
+      </ul>
+
+      <div class="mt-4">
+        <p class="font-semibold mb-2">Technologies:</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-sm">Node.js</span>
+          <span class="badge badge-sm">AWS EC2</span>
+          <span class="badge badge-sm">Database Migration</span>
+          <span class="badge badge-sm">Healthcare Tech</span>
+          <span class="badge badge-sm">API Development</span>
+        </div>
+      </div>
     </TimeLineElement>
+
+    <!-- REVENT TECHNOLOGIES -->
     <TimeLineElement
       title="Backend Engineer"
-      subtitle="From October, 2022 to July, 2023 at Revent Technologies, Lagos, Nigeria"
+      subtitle="October 2022 - July 2023 (10 months) at Revent Technologies, Lagos, Nigeria"
     >
-      <dl>
-        <dd>
-          Designed and implemented a scalable, high-performance Node.js API
-          using Javascript that improved the overall speed and reliability of
-          the client’s internal financial infrastructure by 60%.
-        </dd>
-        <dd>
-          Led the development of a MySQL database system, streamlining data
-          management and increasing data processing speed by 50%.
-        </dd>
-        <dd>
-          Improved overall code quality and efficiency through regular code
-          reviews and collaboration with other developers, resulting in a 25%
-          decrease in bugs and support tickets.
-        </dd>
-        <dd>
-          Created and maintained documentation for internal APIs, resulting in a
-          50% increase in frontend developers productivity due to improved
-          understanding of the system.
-        </dd>
-      </dl>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>
+          Designed and implemented a <strong>scalable, high-performance Node.js API</strong> using
+          JavaScript that improved the overall <strong>speed and reliability of the client's internal
+          financial infrastructure by 60%</strong>
+        </li>
+        <li>
+          Led the development of a <strong>MySQL database system</strong>, streamlining data management
+          and increasing <strong>data processing speed by 50%</strong>
+        </li>
+        <li>
+          Improved overall <strong>code quality and efficiency</strong> through regular code reviews and
+          collaboration with other developers, resulting in a <strong>25% decrease in bugs and support tickets</strong>
+        </li>
+        <li>
+          Created and maintained <strong>comprehensive documentation for internal APIs</strong>, resulting
+          in a <strong>50% increase in frontend developer productivity</strong> due to improved understanding
+          of the system
+        </li>
+        <li>
+          Implemented <strong>automated testing</strong> and continuous integration practices to improve
+          code reliability
+        </li>
+      </ul>
+
+      <div class="mt-4">
+        <p class="font-semibold mb-2">Technologies:</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-sm">Node.js</span>
+          <span class="badge badge-sm">JavaScript</span>
+          <span class="badge badge-sm">MySQL</span>
+          <span class="badge badge-sm">API Development</span>
+          <span class="badge badge-sm">Financial Systems</span>
+        </div>
+      </div>
     </TimeLineElement>
+
+    <!-- BEEZOP TECHNOLOGIES -->
     <TimeLineElement
       title="Junior Backend Engineer"
-      subtitle="From October, 2022 to July, 2023 at Beezop Technologies, Lagos, Nigeria"
+      subtitle="August 2021 - September 2022 (1 year 2 months) at Beezop Technologies, Lagos, Nigeria"
     >
-      <dl>
-        <dd>
-          Overhauled company’s existing notification microservice to handle 100%
-          of all notifications.
-        </dd>
-        <dd>
-          Implemented a RESTful API for the company's SAAS platform, resulting
-          in a 40% increase in sales due to improved user experience.
-        </dd>
-        <dd>
-          Designed a complex import feature using excel sheet as input file to
-          help users import in bulk documents to drive companies software
-          adoption rate.
-        </dd>
-        <dd>
-          Collaborated with cross-functional teams to integrate third-party APIs
-          and platforms, resulting in a seamless user experience and increased
-          customer satisfaction by 60%.
-        </dd>
-      </dl>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>
+          Overhauled company's existing <strong>notification microservice</strong> to handle
+          <strong>100% of all notifications</strong> across the platform
+        </li>
+        <li>
+          Implemented a <strong>RESTful API</strong> for the company's SAAS platform, resulting
+          in a <strong>40% increase in sales</strong> due to improved user experience
+        </li>
+        <li>
+          Designed a <strong>complex import feature using Excel sheets</strong> as input files to
+          help users import bulk documents, driving company's <strong>software adoption rate</strong>
+        </li>
+        <li>
+          Collaborated with cross-functional teams to <strong>integrate third-party APIs and platforms</strong>,
+          resulting in a seamless user experience and <strong>increased customer satisfaction by 60%</strong>
+        </li>
+        <li>
+          Gained foundational experience in <strong>microservices architecture and API design patterns</strong>
+        </li>
+      </ul>
+
+      <div class="mt-4">
+        <p class="font-semibold mb-2">Technologies:</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge badge-sm">Node.js</span>
+          <span class="badge badge-sm">RESTful APIs</span>
+          <span class="badge badge-sm">Microservices</span>
+          <span class="badge badge-sm">Third-party Integrations</span>
+          <span class="badge badge-sm">SAAS Platform</span>
+        </div>
+      </div>
     </TimeLineElement>
   </div>
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+
+  <!-- Education -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Education</h2>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Software Engineering"
-      subtitle="2019 at Stutern - Graduate Accelerator Program, Lagos, Nigeria"
-    />
+      title="Software Engineering Certificate"
+      subtitle="2019 at Stutern Graduate Accelerator Program, Lagos, Nigeria"
+    >
+      <p>Intensive software engineering bootcamp focused on full-stack development and industry best practices</p>
+    </TimeLineElement>
     <TimeLineElement
-      title="Bachelor in Technology Education"
-      subtitle="February, 2018 at Modibbo Adama University of Technology, Adamawa, Nigeria"
-    />
+      title="Bachelor of Technology Education"
+      subtitle="2018 at Modibbo Adama University of Technology, Adamawa, Nigeria"
+    >
+      <p>Comprehensive technical education with focus on technology and engineering principles</p>
+    </TimeLineElement>
   </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+  <!-- Certifications -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Certifications & Professional Development</h2>
   </div>
 
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
+  <ul class="list-disc mx-6 mb-10 grid gap-3">
     <li>
       <a
         href="https://drive.google.com/file/d/1ubVdXx-aykmOPh25kNABvrTiZHqsFI9j/view?usp=sharing"
         target="_blank"
-        >HNGi9 Certificate of Completion</a
+        class="link link-primary"
       >
+        <strong>HNG Internship</strong> - Certificate of Completion
+      </a>
+      <span class="text-sm ml-2">- Advanced backend development program</span>
     </li>
     <li>
       <a
         href="https://drive.google.com/file/d/1R6D3tNIq9Wr_oPHmwe0UTv-f0hD2i5Dj/view?usp=sharing"
         target="_blank"
-        >Certificate of Completion - Codename: Learnable '20 Virtual Internship
-        Programme</a
+        class="link link-primary"
       >
+        <strong>Learnable '20 Virtual Internship Programme</strong> - Certificate of Completion
+      </a>
+      <span class="text-sm ml-2">- Software engineering internship</span>
     </li>
     <li>
       <a
         href="https://coursera.org/share/26b723d44f2e76256d9c46055f664921"
-        target="_blank">Jobberman Soft Skills Course</a
+        target="_blank"
+        class="link link-primary"
       >
+        <strong>Jobberman Soft Skills Course</strong>
+      </a>
+      <span class="text-sm ml-2">- Professional development and workplace skills</span>
     </li>
   </ul>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Volunteer</div>
+  <!-- Volunteer & Community -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Community Involvement & Leadership</h2>
   </div>
 
-  <TimeLineElement title="2023" class="time-line-container grid gap-4 mb-10">
-    <dl>
-      <dd>Web Development Mentor - Genesys Upskill Program Enugu</dd><br />
-      <dd>Organizing Member - CityJs Lagos</dd>
-    </dl>
-  </TimeLineElement>
-  <TimeLineElement title="2019">
-    <dl>
-      <dd>
-        <p>Coper Liaison Officer(CLO) - National Youth Service Corps Lagos</p>
-      </dd>
-    </dl>
-  </TimeLineElement>
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement title="2023 - Present">
+      <ul class="list-disc ml-6 space-y-2">
+        <li>
+          <strong>Web Development Mentor</strong> - Genesys Upskill Program, Enugu
+          <p class="text-sm mt-1">Mentoring aspiring developers in backend development, Node.js, and software engineering best practices</p>
+        </li>
+        <li>
+          <strong>Organizing Member</strong> - CityJS Lagos Conference
+          <p class="text-sm mt-1">Contributing to Lagos tech community through event organization and knowledge sharing</p>
+        </li>
+        <li>
+          <strong>Technical Content Creator</strong>
+          <p class="text-sm mt-1">Sharing backend development insights and NestJS tutorials through blog posts</p>
+        </li>
+      </ul>
+    </TimeLineElement>
+
+    <TimeLineElement title="2019">
+      <ul class="list-disc ml-6">
+        <li>
+          <strong>Corps Liaison Officer (CLO)</strong> - National Youth Service Corps, Lagos
+          <p class="text-sm mt-1">Leadership role coordinating community service activities and youth development programs</p>
+        </li>
+      </ul>
+    </TimeLineElement>
+  </div>
+
+  <!-- Additional Information -->
+  <div class="mb-8">
+    <h2 class="text-3xl w-full font-bold mb-4">Additional Information</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Languages</h3>
+        <ul class="space-y-2">
+          <li><strong>English:</strong> Native/Fluent</li>
+          <li><strong>Hausa:</strong> Fluent</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-3">Work Preferences</h3>
+        <ul class="space-y-2">
+          <li><strong>Location:</strong> Lagos, Nigeria</li>
+          <li><strong>Remote:</strong> Open to remote opportunities</li>
+          <li><strong>Contract:</strong> Open to contract and full-time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer CTA -->
+  <div class="card bg-base-200 p-6 text-center">
+    <h3 class="text-2xl font-bold mb-4">Let's Connect</h3>
+    <p class="mb-4 max-w-2xl mx-auto">
+      Interested in discussing backend architecture, NestJS best practices, fintech systems,
+      or exploring collaboration opportunities? I'm always open to connecting with fellow engineers
+      and exploring interesting projects.
+    </p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="https://x.com/njolipatrick" target="_blank" class="btn btn-outline">
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter
+      </a>
+      <a href="https://linkedin.com/in/njolipatrick" target="_blank" class="btn btn-outline">
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/njolipatrick" target="_blank" class="btn btn-outline">
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="mailto:ogmaro@gmail.com" class="btn btn-primary">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Email Me
+      </a>
+    </div>
+  </div>
 </BaseLayout>
