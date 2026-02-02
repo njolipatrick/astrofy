@@ -8,9 +8,16 @@ export interface Props {
 	description: string;
 	image?: string;
 	ogType?: string;
+	keywords?: string;
 }
 
-const { title, description, image = '/social_img.webp', ogType = 'website' } = Astro.props;
+const { 
+	title, 
+	description, 
+	image = '/social_img.webp', 
+	ogType = 'website',
+	keywords = 'Njoli Patrick, Backend  Engineer, Node.js Developer, NestJS Developer, Senior Backend Engineer, Duplo, API Development, Microservices, Nigerian Tech, Software Engineer Nigeria, Server-side Development, Backend Architecture'
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -23,6 +30,8 @@ const { title, description, image = '/social_img.webp', ogType = 'website' } = A
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Patrick Timothy Njoli" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
@@ -37,3 +46,42 @@ const { title, description, image = '/social_img.webp', ogType = 'website' } = A
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:creator" content="@njolipatrick" />
+<meta name="twitter:site" content="@njolipatrick" />
+
+<!-- Schema.org Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Patrick Timothy Njoli",
+  "jobTitle": "Senior Backend  Engineer",
+  "url": "https://njolipatrick.com",
+  "sameAs": [
+    "https://twitter.com/njolipatrick",
+    "https://github.com/njolipatrick",
+    "https://linkedin.com/in/njolipatrick"
+  ],
+  "knowsAbout": [
+    "Node.js",
+    "NestJS",
+    "Backend Development",
+    "API Development",
+    "Microservices",
+    "TypeScript",
+    "JavaScript",
+    "PostgreSQL",
+    "MongoDB",
+    "REST APIs",
+    "GraphQL",
+    "Docker",
+    "AWS"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Duplo"
+  },
+  "workLocation": "Nigeria",
+  "description": "Senior Backend  Engineer with 6 years of experience specializing in Node.js and NestJS framework"
+}
+</script>
